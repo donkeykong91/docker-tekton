@@ -36,7 +36,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: pipeline-copy
+  name: pipeline-copy-workspace
 spec:
   workspaces:
   - name: images-url
