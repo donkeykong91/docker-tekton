@@ -30,3 +30,16 @@ spec:
       name: task-workspace
     runAfter:
     - clone
+
+---
+
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: pipeline-copy
+spec:
+  workspaces:
+  - name: pipeline-workspace
+  tasks:          
+    taskRef:
+      name: skopeo-copy-task
