@@ -43,7 +43,7 @@ spec:
   tasks: 
   - name: copy
     workspaces: 
-    - name: img-url
+    - name: images-url
       workspace: pipeline-copy-workspace
     taskRef:
       name: skopeo-copy-task
