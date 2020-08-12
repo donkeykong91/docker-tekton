@@ -16,6 +16,6 @@ spec:
           LAB=lab4-shared-git
           ls $WS
           cd $WS
-          ls tekton
+          ls docker-tekton
           echo testing
           # [ "$(./tekton/$LAB/script.bash)" = "worked" ] || exit 1
