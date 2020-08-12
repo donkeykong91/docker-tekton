@@ -1,35 +1,35 @@
-apiVersion: tekton.dev/v1beta1
-kind: Pipeline
-metadata:
-  name: pipeline-workspace
-spec:
-  workspaces:
-  - name: pipeline-workspace
-  params:
-  - name: repository
-    default: https://github.com/donkeykong91/docker-tekton.git
-  - name: branch
-    default: master
-  tasks:
-  - name: clone
-    workspaces:
-    - name: artifacts
-      workspace: pipeline-workspace          
-    taskRef:
-      name: clone-repo
-    params:
-    - name: repository
-      value: $(params.repository)
-    - name: branch
-      value: $(params.branch)
-  - name: task1
-    workspaces:
-    - name: task-workspace
-      workspace: pipeline-workspace          
-    taskRef:
-      name: task-workspace
-    runAfter:
-    - clone
+# apiVersion: tekton.dev/v1beta1
+# kind: Pipeline
+# metadata:
+#   name: pipeline-workspace
+# spec:
+#   workspaces:
+#   - name: pipeline-workspace
+#   params:
+#   - name: repository
+#     default: https://github.com/donkeykong91/docker-tekton.git
+#   - name: branch
+#     default: master
+#   tasks:
+#   - name: clone
+#     workspaces:
+#     - name: artifacts
+#       workspace: pipeline-workspace          
+#     taskRef:
+#       name: clone-repo
+#     params:
+#     - name: repository
+#       value: $(params.repository)
+#     - name: branch
+#       value: $(params.branch)
+#   - name: task1
+#     workspaces:
+#     - name: task-workspace
+#       workspace: pipeline-workspace          
+#     taskRef:
+#       name: task-workspace
+#     runAfter:
+#     - clone
 
 ---
 
@@ -39,7 +39,8 @@ metadata:
   name: pipeline-copy
 spec:
   workspaces:
-  - name: pipeline-workspace
+  - name: images-url
+    workspace: pipeline-workspace
   tasks:          
     taskRef:
       name: skopeo-copy-task
