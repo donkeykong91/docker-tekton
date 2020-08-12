@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1beta1
+kind: EventListener
+metadata:
+  name: workspace
+spec:
+  triggers:
+    - binding:
+        name: simple-binding
+      template:
+        name: trigger-workspace
