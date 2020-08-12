@@ -40,7 +40,6 @@ metadata:
 spec:
   workspaces:
   - name: images-url
-    workspace: pipeline-workspace
-  tasks:          
-    taskRef:
-      name: skopeo-copy-task
+    workspace: pipeline-workspace        
+  taskRef:
+    name: skopeo-copy-task
