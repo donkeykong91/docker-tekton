@@ -34,7 +34,7 @@
 #             persistentVolumeClaim:
 #               claimName: pipelinerun-$(uid)-pvc
 
----
+# ---
 
 apiVersion: tekton.dev/v1beta1
 kind: TriggerBinding
@@ -66,8 +66,8 @@ spec:
         name: pipelinerun-$(uid)
       spec:
         pipelineRef:
-            name: pipeline-workspace
+            name: pipeline-copy-workspace
         workspaces:
-          - name: pipeline-workspace
+          - name: pipeline-copy-workspace
             persistentVolumeClaim:
               claimName: pipelinerun-$(uid)-pvc

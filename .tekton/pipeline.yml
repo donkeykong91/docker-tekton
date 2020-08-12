@@ -31,7 +31,7 @@
 #     runAfter:
 #     - clone
 
----
+# ---
 
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
@@ -40,6 +40,6 @@ metadata:
 spec:
   workspaces:
   - name: images-url
-    workspace: pipeline-workspace        
+    workspace: pipeline-copy-workspace        
   taskRef:
     name: skopeo-copy-task
