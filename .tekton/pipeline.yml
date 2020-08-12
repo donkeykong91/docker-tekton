@@ -39,7 +39,11 @@ metadata:
   name: pipeline-copy-workspace
 spec:
   workspaces:
-  - name: images-url
-    workspace: pipeline-copy-workspace        
-  taskRef:
-    name: skopeo-copy-task
+    name: pipeline-copy-workspace
+  tasks: 
+  - name: copy
+    workspaces: 
+    - name: img-url
+      workspace: pipeline-copy-workspace
+    taskRef:
+      name: skopeo-copy-task
