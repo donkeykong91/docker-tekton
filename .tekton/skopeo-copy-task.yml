@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: skopeo-copy
+  name: skopeo-copy-task
 spec:
   workspaces:
     - name: images-url
