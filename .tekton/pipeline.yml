@@ -39,7 +39,7 @@ metadata:
   name: pipeline-copy-workspace
 spec:
   workspaces:
-    name: pipeline-copy-workspace
+  - name: pipeline-copy-workspace
   tasks: 
   - name: copy
     workspaces: 
