@@ -62,7 +62,7 @@ spec:
     - apiVersion: v1
       kind: ServiceAccount
       metadata:
-        name: docker-service-account
+        name: secret-service-account
       secrets:
         - name: docker-creds
     - apiVersion: v1
@@ -87,3 +87,13 @@ spec:
           - name: pipeline-copy-workspace
             persistentVolumeClaim:
               claimName: pipelinerun-$(uid)-pvc
+    - apiVersion: tekton.dev/v1beta1
+      kind: TaskRun
+      metadata:
+        name: skopeo-run
+      spec:
+        serviceAccountName: secret-service-account
+        taskRef: 
+          name: skopeo-copy-task
+        workspaces:
+        - name: images-url
