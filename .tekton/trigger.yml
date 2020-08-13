@@ -101,3 +101,5 @@ spec:
           name: skopeo-copy-task
         workspaces:
         - name: images-url
+        configmap: 
+          name: image-configmap
