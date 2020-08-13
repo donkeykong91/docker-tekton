@@ -9,7 +9,7 @@ spec:
     - name: srcImageURL
       description: URL of the image to be copied to the destination registry
       type: string
-      default: "docker://_/hello-world:latest"
+      default: "docker:///_/hello-world:latest"
     - name: destImageURL
       description: URL of the image where the image from source should be copied to
       type: string
