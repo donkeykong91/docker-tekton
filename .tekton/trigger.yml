@@ -47,6 +47,11 @@ apiVersion: tekton.dev/v1beta1
 kind: TriggerTemplate
 metadata:
   name: trigger-copy
+params:
+  - name: username
+    description: GitHub username
+  - name: password
+    description: GitHub password
 spec:
   resourcetemplates:
     - apiVersion: v1
@@ -83,6 +88,11 @@ spec:
       spec:
         pipelineRef:
             name: pipeline-copy-workspace
+        params:
+          - name: username
+            value: $(params.username)
+          - name: password
+            value: $(params.password)
         workspaces:
           - name: pipeline-copy-workspace
             persistentVolumeClaim:
