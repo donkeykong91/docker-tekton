@@ -60,6 +60,12 @@ spec:
         username: 1oraldsense9
         password: sacjim-nufdI4-dyxfyq
     - apiVersion: v1
+      kind: ServiceAccount
+      metadata:
+        name: docker-service-account
+      secrets:
+        - name: docker-creds
+    - apiVersion: v1
       kind: PersistentVolumeClaim
       metadata:
         name: pipelinerun-$(uid)-pvc
