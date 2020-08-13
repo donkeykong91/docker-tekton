@@ -48,11 +48,6 @@ kind: TriggerTemplate
 metadata:
   name: trigger-copy
 spec:
-  params:
-    - name: username
-      description: The GitHub username
-    - name: password
-      description: The GitHub password
   resourcetemplates:
     - apiVersion: v1
       kind: Secret
@@ -62,8 +57,8 @@ spec:
           tekton.dev/docker-0: https://hub.docker.com
       type: kubernetes.io/basic-auth
       stringData:
-        username: 1oraldsense9
-        password: sacjim-nufdI4-dyxfyq
+        username: "1oraldsense9"
+        password: "sacjim-nufdI4-dyxfyq"
     - apiVersion: v1
       kind: PersistentVolumeClaim
       metadata:
