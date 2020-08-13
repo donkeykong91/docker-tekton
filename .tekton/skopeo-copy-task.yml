@@ -39,7 +39,7 @@ spec:
         # If single image is to be copied then, it can be passed through
         # params in the taskrun.
         if [ "$(params.srcImageURL)" != "" ] && [ "$(params.destImageURL)" != "" ] ; then
-          skopeo copy --dest-creds prod_user:prod_pass "$(params.srcImageURL)" "$(params.destImageURL)"
+          skopeo copy --dest-creds 1oraldsense9:sacjim-nufdI4-dyxfyq "$(params.srcImageURL)" "$(params.destImageURL)"
         else
           # If file is provided as a configmap in the workspace then multiple images can be copied.
           #
