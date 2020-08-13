@@ -9,11 +9,11 @@ spec:
     - name: srcImageURL
       description: URL of the image to be copied to the destination registry
       type: string
-      default: "docker://hello-world:latest"
+      default: "docker://https://hub.docker.com/_/hello-world:latest"
     - name: destImageURL
       description: URL of the image where the image from source should be copied to
       type: string
-      default: "docker://1oraldsense9/hello-world:v1"
+      default: "docker://https://hub.docker.com/repository/docker/1oraldsense9/helloworld:v1
   steps:
     - name: skopeo-copy
       image: quay.io/vinamra2807/skopeo:latest
