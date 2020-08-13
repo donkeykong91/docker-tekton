@@ -54,7 +54,7 @@ spec:
       metadata:
         name: docker-creds
         annotations:
-          tekton.dev/docker-0: https://hub.docker.com/
+          tekton.dev/docker-0: https://docker.io
       type: kubernetes.io/basic-auth
       stringData:
         username: 1oraldsense9
