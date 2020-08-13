@@ -92,11 +92,7 @@ spec:
       metadata:
         name: skopeo-run
       spec:
-        params:
-          - name: srcImageURL
-            value: docker://hello-world:latest
-          - name: destImageURL
-            value: docker://1oraldsense9/helloworld
+        serviceAccountName: secret-service-account
         taskRef:
           name: skopeo-copy-task
         workspaces:
