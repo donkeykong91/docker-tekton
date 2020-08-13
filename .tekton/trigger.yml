@@ -54,16 +54,16 @@ spec:
     - name: password
       description: The GitHub password
   resourcetemplates:
-    # - apiVersion: tekton.dev/v1beta1
-    #   kind: Secret
-    #   metadata:
-    #     name: docker-creds
-    #     annotations:
-    #       tekton.dev/docker-0: https://hub.docker.com
-    #   type: kubernetes.io/basic-auth
-    #   stringData:
-    #     username: $(params.username)
-    #     password: $(params.password)
+    - apiVersion: v1
+      kind: Secret
+      metadata:
+        name: docker-creds
+        annotations:
+          tekton.dev/docker-0: https://hub.docker.com
+      type: kubernetes.io/basic-auth
+      stringData:
+        username: $(params.username)
+        password: $(params.password)
     - apiVersion: v1
       kind: PersistentVolumeClaim
       metadata:
