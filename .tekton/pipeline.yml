@@ -42,9 +42,9 @@ spec:
   - name: pipeline-copy-workspace
   params:
    - name: username
-     description: Username for GitHub
+     description: Username for Docker
    - name: password
-     description: Password for GitHub
+     description: Password for Docker
   tasks: 
   - name: copy
     params: 

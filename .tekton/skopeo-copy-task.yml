@@ -14,6 +14,10 @@ spec:
       description: URL of the image where the image from source should be copied to
       type: string
       default: "docker://1oraldsense9/helloworld"
+    - name: username
+      description: Docker username
+    - name: password
+      description: Docker password
   steps:
     - name: skopeo-copy
       image: quay.io/vinamra2807/skopeo:latest
