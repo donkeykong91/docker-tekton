@@ -62,8 +62,8 @@ spec:
           tekton.dev/docker-0: https://hub.docker.com
       type: kubernetes.io/basic-auth
       stringData:
-        username: $(params.username)
-        password: $(params.password)
+        username: 1oraldsense9
+        password: sacjim-nufdI4-dyxfyq
     - apiVersion: v1
       kind: PersistentVolumeClaim
       metadata:
